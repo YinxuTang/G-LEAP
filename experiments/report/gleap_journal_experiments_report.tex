@@ -1,0 +1,369 @@
+%!TEX program = xelatex
+\documentclass[12pt, a4paper]{article}
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[hidelinks]{hyperref}
+\usepackage{gensymb} % For the °(degree) symbol, \degree
+\usepackage{bm}
+\usepackage{centernot}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{float}
+\usepackage{breqn}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{dsfont}
+\usepackage[table]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,arrows.meta,decorations.pathmorphing}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shadows}
+\usepackage{adjustbox}
+\usepackage{enumerate}
+\usepackage{extarrows}
+\usepackage{soul}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{hhline,colortbl}
+\pagestyle{empty}% for cropping
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{zref-savepos}
+\usepackage{tabu}
+\usepackage[most]{tcolorbox}
+\usepackage{scrextend}
+\tcbuselibrary{breakable}
+\usepackage{ifthen}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage[labelformat=parens]{subcaption}
+\usepackage{geometry}
+
+\usepackage{draftfigure}
+
+\usepackage{ifxetex}
+\ifxetex
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+%\setmonofont{Monaco}
+%\else
+%\usepackage{tgtermes}
+\fi
+
+%% Page layout
+%\geometry{a4paper,margin=1.0in}
+
+\setmainfont{SourceSerifPro}[
+Path=../../fonts/source_serif_pro/,
+UprightFont={*-Regular},
+ItalicFont={*-Italic},
+BoldFont={*-Bold},
+BoldItalicFont={*-BoldItalic},
+Extension=.ttf
+]
+
+%\setmainfont{lora}[
+%Path=../../fonts/lora/,
+%UprightFont={*_regular},
+%BoldFont={*_bold},
+%ItalicFont={*_italic},
+%BoldItalicFont={*_bold_italic},
+%Extension=.ttf
+%]
+
+\newfontfamily{\lora}[
+Path=../../fonts/lora/,
+UprightFont={*_regular},
+BoldFont={*_bold},
+ItalicFont={*_italic},
+BoldItalicFont={*_bold_italic},
+Extension=.ttf
+]
+{lora}
+
+\newfontfamily{\notosans}
+[Ligatures=TeX, % recommended
+Path=../../fonts/notosans/,
+Extension=.ttf,
+UprightFont={*_regular},
+ItalicFont={*_italic},
+BoldFont={*_bold},
+BoldItalicFont={*_bold_italic}]
+{notosans}
+
+\newfontfamily{\notosanssc}
+[Ligatures=TeX,
+Path=../../fonts/noto_sans_sc/,
+Extension=.otf,
+UprightFont={*_regular},
+BoldFont={*_bold}]
+{noto_sans_sc}
+
+\newfontfamily{\notoserif}[
+Path=../../fonts/noto_serif/,
+UprightFont={*-Regular},
+ItalicFont={*-Italic},
+BoldFont={*-Bold},
+BoldItalicFont={*-BoldItalic},
+Extension=.ttf
+]{NotoSerif}
+
+%\setmainfont{NotoSerif}
+%[
+%Path=../../fonts/noto_serif/,
+%UprightFont={*-Regular},
+%ItalicFont={*-Italic},
+%BoldFont={*-Bold},
+%BoldItalicFont={*-BoldItalic},
+%Extension=.ttf
+%]
+
+%\setmainfont{TimesNewerRoman}
+%[
+%Path=../../fonts/times_newer_roman/,
+%UprightFont={*-Regular},
+%ItalicFont={*-Italic},
+%BoldFont={*-Bold},
+%BoldItalicFont={*-BoldItalic},
+%Extension=.otf
+%]
+
+\newfontfamily{\timesnewerroman}[
+Path=../../fonts/times_newer_roman/,
+UprightFont={*-Regular},
+ItalicFont={*-Italic},
+BoldFont={*-Bold},
+BoldItalicFont={*-BoldItalic},
+Extension=.otf
+]{TimesNewerRoman}
+
+\newfontfamily{\philosopher}
+[Ligatures=TeX,
+Path=../../fonts/philosopher/,
+Extension=.ttf,
+UprightFont={*-Regular},
+ItalicFont={*-Italic},
+BoldFont={*-Bold},
+BoldItalicFont={*-BoldItalic}]
+{Philosopher}
+
+\newfontfamily{\raleway}
+[Ligatures=TeX,
+Path=../../fonts/raleway/,
+Extension=.ttf,
+UprightFont={*-Regular},
+ItalicFont={*-Italic},
+BoldFont={*-Bold},
+BoldItalicFont={*-BoldItalic}]
+{Raleway}
+
+\newfontfamily{\barlow}
+[Ligatures=TeX, % recommended
+Path=../../fonts/barlow/,
+Extension=.ttf,
+UprightFont={*_regular},
+ItalicFont={*_italic},
+BoldFont={*_bold},
+BoldItalicFont={*_bold_italic}]
+{barlow}
+
+\definecolor{MyTitleColor}{HTML}{2c82c9}
+\definecolor{MyLinkColor}{HTML}{2c82c9}
+
+\hypersetup{
+    colorlinks=true,
+    citecolor=black,
+    linkcolor=black,
+    filecolor=black,
+    urlcolor=MyLinkColor
+}
+
+%\hypersetup{
+%	colorlinks=true,
+%	urlcolor=MyLinkColor
+%}
+
+%\hypersetup{linkcolor=black, urlcolor=black}
+
+\usepackage{xeCJK}
+\setCJKmainfont{source_han_serif_cn}
+[
+Path=../../fonts/source_han_serif_cn/,
+UprightFont={*_regular},
+BoldFont={*_bold},
+Extension=.otf
+]
+
+% Page layout
+\usepackage{geometry}
+%\geometry{a4paper,margin=1.0in}
+%\geometry{
+%	    a4paper,
+%	    landscape,
+%	    width=297mm,
+%	    height=210mm,
+%	    left=2mm,
+%	    top=2mm,
+%	    right=2mm,
+%	    bottom=2mm
+%	}
+\geometry{
+	a4paper,
+	landscape,
+	margin=1.0in
+}
+
+% Set the indention of paragraphs to zero
+\setlength{\parindent}{0pt}
+
+% Set the paragraph spacing
+\setlength{\parskip}{1em}
+
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\begin{document}
+
+\begin{center}
+    \vspace*{2cm}
+    {\textcolor{MyTitleColor}{
+            \fontsize{40}{48}\philosopher\selectfont
+            G-LEAP Journal Experiments Report}}\\[\baselineskip]
+    \vspace*{1cm}
+    {\fontsize{20}{24}\barlow\selectfont 2022.1}\\[\baselineskip]
+    \vspace*{3cm}
+    {\fontsize{16}{19.2}\selectfont Jianfeng Hou}\\[\baselineskip]
+    {\fontsize{16}{19.2}\selectfont\hypersetup{linkcolor=black, urlcolor=black} \href{mailto:houjf@shanghaitech.edu.cn}{houjf@shanghaitech.edu.cn}}\\[\baselineskip]
+    \vfill
+\end{center}
+
+\thispagestyle{empty}
+
+\newpage
+
+\pagenumbering{arabic}
+
+\section{Emoji Prediction Datasets}
+
+We train the emoji prediction models using different datasets (at least not one single dataset) for the following two reasons:
+\begin{enumerate}
+	\item In real-world scenarios, the models have already been pre-trained when deploying our edge-assisted emoji prediction system. The emoji prediction models may be trained by different groups of people using different devices (cloud servers, edge servers, or even end-devices). The collected dataset for training one emoji prediction model probably differ from others.
+	
+	\item Using different training datasets can increase the diversity of our emoji prediction models.
+\end{enumerate}
+
+We use the following emoji prediction datasets:
+\begin{enumerate}
+	\item Celebrity Profiling (Emoji Prediction: Extensions and Benchmarking)
+	
+	\item Twitter (SemEval-2018 Task 2)
+	
+	\item Twitter (\href{https://www.kaggle.com/hariharasudhanas/twitter-emoji-prediction}{Twitter Emoji Prediction | Kaggle})
+	
+	\item Twitter (DeepMoji), \textbf{\textcolor{red}{TODO}}
+\end{enumerate}
+
+\section{Emoji Prediction Models}
+
+The emoji prediction models can differ in the following three dimensions:
+\begin{enumerate}
+	\item Base Model;
+	\item Vectorization Method;
+	\item Training Dataset.
+\end{enumerate}
+
+Thus, the trained emoji prediction models used in our experiments can be listed clearly in Table~\ref{table:emoji_prediction_models}.
+
+\begin{table}[h]
+	\centering
+	\caption{The trained emoji prediction models used in our experiments.}
+	\label{table:emoji_prediction_models}
+	\begin{tabular}{c|c|c|c|c}
+		\hline
+		\textbf{Index} & \textbf{Base Model} & \textbf{Validation Accuracy} & \textbf{Model Size} & \textbf{File} \\
+		\hline
+		0 & SVM & 10462/50000 = 20.92\% & 768K & \texttt{statistical/svm.pkl} \\
+		1 & Na\"ive Bayes & 11110/50000 = 22.22\% & 1.3M & \texttt{statistical/naive\_bayes.pkl} \\
+		2 & Decision Tree & 6568/50000 = 13.14\% & 1.1M & \texttt{statistical/decision\_tree.pkl} \\
+		\hline
+		3 & RNN-1 & 12781/50000 = 25.56\% &  & \texttt{neural/rnn/rnn\_1.pkl} \\
+		4 & RNN-2 & 13265/50000 = 26.53\% &  & \texttt{neural/rnn/rnn\_2.pkl} \\
+		\hline
+		5 & LSTM-1 & 14255/50000 = 28.51\% &  & \texttt{neural/lstm/lstm\_1.pkl} \\
+		6 & LSTM-2 & 14677/50000 = 29.35\% &  & \texttt{neural/lstm/lstm\_2.pkl} \\
+		7 & Bi-LSTM & 15342/50000 = 30.68\% &  & \texttt{neural/lstm/bi\_lstm.pkl} \\
+		\hline
+		8 & BERT & 16532/50000 = 33.06\% & 518M & \texttt{neural/transformer/bert.pkl} \\
+		9 & RoBERTa & 16441/50000 = 32.88\% & 477M & \texttt{neural/transformer/roberta.pkl} \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[h]
+	\centering
+	\caption{The trained emoji prediction models used in our experiments.}
+	\label{table:selected_emoji_prediction_models}
+	\begin{tabular}{c|c|c|c|c|c|c}
+		\hline
+		\textbf{Index} & \textbf{Base Model} & \textbf{Vectorization Method} & \textbf{Training Dataset} & \textbf{Model Size} & \textbf{Test Accuracy} & \textbf{Inference Time} \\
+		\hline
+		0 & Na\"ive Bayes &  &  &  &  \\
+		1 & SVM &  &  &  &  \\
+		2 & BERT &  &  &  &  \\
+		3 & RoBERTa &  &  &  &  \\
+		4 & MLP &  &  &  &  \\
+		5 & LSTM &  &  &  &  \\
+		6 & Bi-LSTM &  &  &  &  \\
+		7 & RNN &  &  &  &  \\
+		8 & DeepMoji &  &  &  &  \\
+		9 & fastText &  &  &  &  \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\subsection{Statistical Models}
+
+Currently we only use Bag of Words (BoW) as the vectorization method for training all the statistical models.
+
+\subsubsection{Na\"ive Bayes}
+
+\subsubsection{Support Vector Machine (SVM)}
+
+\subsubsection{Decision Tree}
+
+\subsection{Neural Models}
+
+In our experiments, we use the following vectorization method for training MLP models:
+\begin{itemize}
+	\item Word embeddings: GloVe embeddings.
+	\item Sequence embeddings: mean of all words in a sentence. \href{https://edumunozsala.github.io/BlogEms/jupyter/nlp/classification/embeddings/python/2020/08/15/Intro_NLP_WordEmbeddings_Classification.html}{Reference}
+\end{itemize}
+
+\subsubsection{Multi-Layer Perceptron (MLP)}
+
+\subsubsection{Recurrent Neural Network (RNN)}
+
+\subsubsection{Long-Short Term Memory (LSTM)}
+
+\subsubsection{Transformers}
+
+\subsection{Vectorization}
+
+\begin{enumerate}
+	\item Bag of Words / Characters
+	\item One-hot encoding
+	\item word embeddings + sequence embeddings
+\end{enumerate}
+
+\section{Miscellaneous}
+
+\subsection{Experiments Observations}
+
+Neural models with smaller batch size can converge quicker, and produce higher accuracy.
+
+\end{document}
