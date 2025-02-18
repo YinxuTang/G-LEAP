@@ -1,0 +1,394 @@
+%!TEX program = xelatex
+\documentclass[12pt, a4paper]{article}
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[hidelinks]{hyperref}
+\usepackage{gensymb} % For the °(degree) symbol, \degree
+\usepackage{bm}
+\usepackage{centernot}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{float}
+\usepackage{breqn}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{dsfont}
+\usepackage[table]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,arrows.meta,decorations.pathmorphing}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shadows}
+\usepackage{adjustbox}
+\usepackage{enumerate}
+\usepackage{extarrows}
+\usepackage{soul}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{hhline,colortbl}
+\pagestyle{empty}% for cropping
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{zref-savepos}
+\usepackage{tabu}
+\usepackage[most]{tcolorbox}
+\usepackage{scrextend}
+\tcbuselibrary{breakable}
+\usepackage{ifthen}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage[labelformat=parens]{subcaption}
+\usepackage{geometry}
+
+\usepackage{draftfigure}
+
+\usepackage{ifxetex}
+\ifxetex
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\setmonofont{Monaco}
+%\else
+%\usepackage{tgtermes}
+\fi
+
+%% Page layout
+%\geometry{a4paper,margin=1.0in}
+
+\setmainfont{SourceSerifPro}[
+Path=../fonts/source_serif_pro/,
+UprightFont={*-Regular},
+ItalicFont={*-Italic},
+BoldFont={*-Bold},
+BoldItalicFont={*-BoldItalic},
+Extension=.ttf
+]
+
+%\setmainfont{lora}[
+%Path=../../fonts/lora/,
+%UprightFont={*_regular},
+%BoldFont={*_bold},
+%ItalicFont={*_italic},
+%BoldItalicFont={*_bold_italic},
+%Extension=.ttf
+%]
+
+\newfontfamily{\lora}[
+Path=../fonts/lora/,
+UprightFont={*_regular},
+BoldFont={*_bold},
+ItalicFont={*_italic},
+BoldItalicFont={*_bold_italic},
+Extension=.ttf
+]
+{lora}
+
+\newfontfamily{\notosans}
+[Ligatures=TeX, % recommended
+Path=../fonts/notosans/,
+Extension=.ttf,
+UprightFont={*_regular},
+ItalicFont={*_italic},
+BoldFont={*_bold},
+BoldItalicFont={*_bold_italic}]
+{notosans}
+
+\newfontfamily{\notosanssc}
+[Ligatures=TeX,
+Path=../fonts/noto_sans_sc/,
+Extension=.otf,
+UprightFont={*_regular},
+BoldFont={*_bold}]
+{noto_sans_sc}
+
+\newfontfamily{\notoserif}[
+Path=../fonts/noto_serif/,
+UprightFont={*-Regular},
+ItalicFont={*-Italic},
+BoldFont={*-Bold},
+BoldItalicFont={*-BoldItalic},
+Extension=.ttf
+]{NotoSerif}
+
+%\setmainfont{NotoSerif}
+%[
+%Path=../../fonts/noto_serif/,
+%UprightFont={*-Regular},
+%ItalicFont={*-Italic},
+%BoldFont={*-Bold},
+%BoldItalicFont={*-BoldItalic},
+%Extension=.ttf
+%]
+
+%\setmainfont{TimesNewerRoman}
+%[
+%Path=../../fonts/times_newer_roman/,
+%UprightFont={*-Regular},
+%ItalicFont={*-Italic},
+%BoldFont={*-Bold},
+%BoldItalicFont={*-BoldItalic},
+%Extension=.otf
+%]
+
+\newfontfamily{\timesnewerroman}[
+Path=../fonts/times_newer_roman/,
+UprightFont={*-Regular},
+ItalicFont={*-Italic},
+BoldFont={*-Bold},
+BoldItalicFont={*-BoldItalic},
+Extension=.otf
+]{TimesNewerRoman}
+
+\newfontfamily{\philosopher}
+[Ligatures=TeX,
+Path=../fonts/philosopher/,
+Extension=.ttf,
+UprightFont={*-Regular},
+ItalicFont={*-Italic},
+BoldFont={*-Bold},
+BoldItalicFont={*-BoldItalic}]
+{Philosopher}
+
+\newfontfamily{\raleway}
+[Ligatures=TeX,
+Path=../fonts/raleway/,
+Extension=.ttf,
+UprightFont={*-Regular},
+ItalicFont={*-Italic},
+BoldFont={*-Bold},
+BoldItalicFont={*-BoldItalic}]
+{Raleway}
+
+\newfontfamily{\barlow}
+[Ligatures=TeX, % recommended
+Path=../fonts/barlow/,
+Extension=.ttf,
+UprightFont={*_regular},
+ItalicFont={*_italic},
+BoldFont={*_bold},
+BoldItalicFont={*_bold_italic}]
+{barlow}
+
+\definecolor{MyTitleColor}{HTML}{2c82c9}
+\definecolor{MyLinkColor}{HTML}{2c82c9}
+
+\hypersetup{
+    colorlinks=true,
+    citecolor=black,
+    linkcolor=black,
+    filecolor=black,
+    urlcolor=MyLinkColor
+}
+
+%\hypersetup{
+%	colorlinks=true,
+%	urlcolor=MyLinkColor
+%}
+
+%\hypersetup{linkcolor=black, urlcolor=black}
+
+\usepackage{xeCJK}
+\setCJKmainfont{source_han_serif_cn}
+[
+Path=../fonts/source_han_serif_cn/,
+UprightFont={*_regular},
+BoldFont={*_bold},
+Extension=.otf
+]
+
+% Page layout
+\usepackage{geometry}
+\geometry{a4paper, margin=1.0in}
+%\geometry{
+%	    a4paper,
+%	    landscape,
+%	    width=297mm,
+%	    height=210mm,
+%	    left=2mm,
+%	    top=2mm,
+%	    right=2mm,
+%	    bottom=2mm
+%	}
+%\geometry{
+%	a4paper,
+%	landscape,
+%	margin=1.0in
+%}
+
+% Set the indention of paragraphs to zero
+\setlength{\parindent}{0pt}
+
+% Set the paragraph spacing
+\setlength{\parskip}{1em}
+
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\begin{document}
+
+\begin{center}
+    \vspace*{2cm}
+    {\textcolor{MyTitleColor}{
+            \fontsize{40}{48}\philosopher\selectfont
+            Accuracy Maximization}}\\[\baselineskip]
+    \vspace*{1cm}
+    {\fontsize{20}{24}\barlow\selectfont 2022.1}\\[\baselineskip]
+    \vspace*{3cm}
+    {\fontsize{16}{19.2}\selectfont Jianfeng Hou}\\[\baselineskip]
+    {\fontsize{16}{19.2}\selectfont\hypersetup{linkcolor=black, urlcolor=black} \href{mailto:houjf@shanghaitech.edu.cn}{houjf@shanghaitech.edu.cn}}\\[\baselineskip]
+    \vfill
+\end{center}
+
+\thispagestyle{empty}
+
+\newpage
+
+\pagenumbering{arabic}
+
+\section{Problem Formulation}
+
+\subsection{Action (Super Arm)}
+
+There are totally $N + 1$ arms.
+
+In each round, the agent chooses an action (\textit{i.e.}, selects a super arm). Denote the set of all the super arms as $\mathcal{A}$.
+
+\subsection{Policy}
+
+A \textbf{policy} $\pi$ is a distribution over actions. Formally, a policy $\pi$ is defined as
+\[
+\pi (a) = \mathbb{P} \left[ A(t) = a \right], \forall a \in \mathcal{A}.
+\]
+
+Not that $ A(t)$ (\textit{i.e.}, the action in round $t$) can be equivalently represented by a decision vector $\bm{s} (t) = [ s_0 (t), s_1 (t), \dots, s_N (t) ]$, where
+\[
+s_i (t) = 
+\begin{cases}
+	1 &\text{ if } i \in A(t),\\
+	0 &\text{ otherwise.}
+\end{cases}
+\]
+
+\subsection{Long-Term Time-Averaged Constraint}
+
+Under policy $\pi$, the energy consumption is \textit{i.i.d.} over rounds with the following mean:
+\begin{align}
+	\begin{split}
+	\mathbb{E}_{\pi} \left[\sum_{i \in A(t)} E_i(t) \right] &= \sum\limits_{a \in \mathcal{A}} \mathbb{E} \left[ \sum\limits_{i \in A(t)} E_i (t) \bigg\vert A (t) = a \right] \cdot \pi(a)\\
+	&= \sum\limits_{a \in \mathcal{A}} \mathbb{E} \left[ \sum\limits_{i \in a} E_i (t) \right] \cdot \pi(a)\\
+	&= \sum\limits_{a \in \mathcal{A}} \sum\limits_{i \in a} \mathbb{E} \left[ E_i (t) \right] \cdot \pi(a)\\
+	&= \sum\limits_{a \in \mathcal{A}} \rho_a \cdot \pi(a),
+	\label{eq:energy_consumption_representation}
+	\end{split}
+\end{align}
+where $\rho_a = \sum\limits_{i \in a} \mathbb{E} \left[ E_i (t) \right]$ for all $a \in \mathcal{A}$.
+
+There exists a long-term time-averaged constraint on the energy consumption of the smartphone:
+\begin{align}
+	\mathop{\lim \sup}_{T' \to +\infty} \frac{1}{T'} \sum_{t=1}^{T'} \mathbb{E}_{\pi} \left[\sum_{i \in \mathcal{N}} E_i(t) s_i(t) \right] \leq b
+	\label{eq:energy_consumption_constraint}
+\end{align}
+where $b$ is a positive constant representing the energy budget in each round.
+
+According to \eqref{eq:energy_consumption_representation}, constraint~\eqref{eq:energy_consumption_constraint} can be written as:
+\begin{align}
+	\sum\limits_{a \in \mathcal{A}} \rho_a \cdot \pi(a) \leq b.
+	\label{eq:energy_consumption_constraint_transformed}
+\end{align}
+
+\subsection{The Original Problem}
+
+\[
+K (t) = 1 - \prod\limits_{i \in \mathcal{N}} \left( 1 - C_i (t) s_i (t) \right) = 1 - \prod\limits_{i \in A(t)} \left( 1 - C_i (t) \right).
+\]
+
+%\textcolor{red}{Attention: No independence ($s_i (t)$ are not independent with each other).}
+%\begin{align*}
+%	\mathbb{E}_{\pi} \left[ K (t) \right] &= \mathbb{E}_{\pi} \left[ 1 - \prod\limits_{i \in \mathcal{N}} \left( 1 - C_i (t) s_i (t) \right) \right]\\
+%	&= 1 - 
+%\end{align*}
+
+\begin{equation}
+	\begin{aligned}
+		\mathop {\rm{maximize}}_{\pi} \quad & \mathbb{E}_{\pi} \left[ \sum\limits_{t = 1}^{T} K (t) \right]\\
+		\rm{subject~to} \quad & \sum\limits_{a \in \mathcal{A}} \rho_a \cdot \pi(a) \leq b.
+	\end{aligned}
+\end{equation}
+
+For all $a \in \mathcal{A}$, the mean reward $\phi_a$ of pulling super arm $a$ is given by
+\begin{align*}
+	\phi_a &\triangleq \mathbb{E} \left[ R_a (t) \right]\\
+	&= \mathbb{E} \Big[ K(t) \Big\vert A(t) = a \Big]\\
+	&= \mathbb{P} \Big[ K(t) = 1 \Big\vert A(t) = a \Big]\\
+	&= \mathbb{P} \left[ \prod\limits_{i \in A(t)} \left( 1 - C_i (t) \right) = 0 \bigg\vert A(t) = a \right]\\
+	&= \mathbb{P} \left[ \prod\limits_{i \in a} \left( 1 - C_i (t) \right) = 0 \right]\\
+	&= \mathbb{P} \left[ \bigcup\limits_{i \in a} C_i (t) = 1 \right]\\
+	&= 1 - \mathbb{P} \left[ \bigcap\limits_{i \in a} C_i (t) = 0 \right]\\
+	&= 1 - \prod\limits_{i \in a} (1 - c_i).
+\end{align*}
+
+The mean reward obtained by the agent under policy $\pi$ is given by
+\[
+\mathbb{E}_{\pi} \left[ R (t) \right] = \sum\limits_{a \in \mathcal{A}} \phi_a \cdot \pi (a).
+\]
+
+According to the INFOCOM 2019 Fairness paper (Jia Liu), assuming the mean reward vector $\bm{\phi} = \{ \phi_a: a \in \mathcal{A} \}$ is known in advance, the reward maximization problem with a long-term time-averaged constraint can be formulated as the following linear program:
+\begin{align}
+	\begin{split}
+		\mathop {\rm{maximize}}_{\pi} \quad & \sum\limits_{a \in \mathcal{A}} \phi_a \cdot \pi (a)\\
+		\rm{subject~to} \quad & \sum\limits_{a \in \mathcal{A}} \rho_a \cdot \pi(a) \leq b,\\
+		& \pi(a) \in [0, 1], \forall a \in \mathcal{A},\\
+		& \sum\limits_{a \in \mathcal{A}} \pi(a) = 1.
+		\label{eq:optimization_problem}
+	\end{split}
+\end{align}
+
+\subsection{The Transformed Problem}
+
+\[
+\begin{aligned}
+	\mathop {\rm{maximize}}_{\pi} \quad & \mathbb{E}_{\pi} \left[ \sum\limits_{t = 1}^{T} \sum\limits_{i \in A(t)} C_i (t) \right]\\
+	\rm{subject~to} \quad & \sum\limits_{a \in \mathcal{A}} \rho_a \cdot \pi(a) \leq b.
+\end{aligned}
+\]
+
+For all $a \in \mathcal{A}$, the mean reward $\omega_a$ of pulling super arm $a$ is given by
+\begin{align}
+	\omega_a &\triangleq \mathbb{E} \left[ R_a^' (t) \right]\\
+	&= \mathbb{E} \left[ \sum\limits_{i \in A(t)} C_i (t) \Big\vert A(t) = a \right]\\
+	&= \sum\limits_{i \in a} c_i.
+\end{align}
+
+The mean reward obtained by the agent under policy $\pi$ is given by
+\begin{align*}
+	\mathbb{E}_{\pi} \left[ R' (t) \right] &= \sum\limits_{a \in \mathcal{A}} \mathbb{E} \left[ R^'_a (t) \right] \cdot \pi (a)\\
+	&= \sum\limits_{a \in \mathcal{A}} \sum\limits_{i \in a} c_i \cdot \pi(a)\\
+	&= \sum\limits_{a \in \mathcal{A}} \omega_a \cdot \pi(a).
+\end{align*}
+
+\begin{align}
+	\begin{split}
+		\mathop {\rm{maximize}}_{\pi} \quad & \sum\limits_{a \in \mathcal{A}} \omega_a \cdot \pi (a)\\
+		\rm{subject~to} \quad & \sum\limits_{a \in \mathcal{A}} \rho_a \cdot \pi(a) \leq b,\\
+		& \pi(a) \in [0, 1], \forall a \in \mathcal{A},\\
+		& \sum\limits_{a \in \mathcal{A}} \pi(a) = 1.
+		\label{eq:optimization_problem_transformed}
+	\end{split}
+\end{align}
+
+\subsection{Proof of Equivalence}
+
+Now we prove that the optimal solution to Problem~\ref{eq:optimization_problem_transformed} is exactly the optimal solution to Problem~\ref{eq:optimization_problem}.
+
+\[
+\mathbb{E}_{\pi_1} \left[ R^' (t) \right] \ge \mathbb{E}_{\pi_2} \left[ R^' (t) \right] \Rightarrow \mathbb{E}_{\pi_1} \left[ R (t) \right] \ge \mathbb{E}_{\pi_2} \left[ R (t) \right], \forall \pi_1, \pi_2 \in \mathcal{F}.
+\]
+
+\textbf{Proof}
+
+As the constraint of Problem~\eqref{eq:optimization_problem} is exactly the same as the constraint of Problem~\eqref{eq:optimization_problem_transformed}, we can denote the set of all the feasible policies as $\mathcal{F}$. Assume $\pi^*$ is the optimal solution to Problem~\ref{eq:optimization_problem_transformed}, then we have for any $\pi \in \mathcal{F}$, $\mathbb{E}_{\pi^*} \left[ R^' (t) \right] \ge \mathbb{E}_{\pi} \left[ R^' (t) \right]$.
+
+\end{document}
