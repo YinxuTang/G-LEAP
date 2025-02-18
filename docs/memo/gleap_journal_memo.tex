@@ -1,0 +1,222 @@
+%!TEX program = xelatex
+\documentclass[10pt, a4paper]{article}
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[hidelinks]{hyperref}
+\usepackage{gensymb} % For the °(degree) symbol, \degree
+\usepackage{bm}
+\usepackage{centernot}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{float}
+\usepackage{breqn}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{dsfont}
+\usepackage[table]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows,arrows.meta,decorations.pathmorphing}
+\usepackage{adjustbox}
+\usepackage{enumerate}
+\usepackage{extarrows}
+\usepackage{soul}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{hhline,colortbl}
+\pagestyle{empty}% for cropping
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{zref-savepos}
+\usepackage{tabu}
+\usepackage[most]{tcolorbox}
+\usepackage{scrextend}
+\tcbuselibrary{breakable}
+\usepackage{subfigure}
+\usepackage{ifthen}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{booktabs}
+
+\usepackage{draftfigure}
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[hidelinks]{hyperref}
+\usepackage{gensymb} % For the °(degree) symbol, \degree
+\usepackage{bm}
+\usepackage{centernot}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{float}
+\usepackage{breqn}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{dsfont}
+\usepackage[table]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows,arrows.meta,decorations.pathmorphing}
+\usepackage{adjustbox}
+\usepackage{enumerate}
+\usepackage{extarrows}
+\usepackage{soul}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{hhline,colortbl}
+\pagestyle{empty}% for cropping
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{zref-savepos}
+\usepackage{tabu}
+\usepackage[most]{tcolorbox}
+\usepackage{scrextend}
+\tcbuselibrary{breakable}
+\usepackage{subfigure}
+\usepackage{ifthen}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{booktabs}
+
+\usepackage{draftfigure}
+
+\usepackage{ifxetex}
+\ifxetex
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+%\else
+%\usepackage{tgtermes}
+\fi
+
+% Page layout
+\usepackage{geometry}
+\geometry{a4paper,margin=1.0in}
+
+\newfontfamily{\notosanssc}
+[Ligatures=TeX, % recommended
+Path=./fonts/noto_sans_sc/,
+Extension=.otf,
+UprightFont={*_regular},
+BoldFont={*_bold}]
+{noto_sans_sc}
+
+\definecolor{MyTitleColor}{HTML}{2c82c9}
+\definecolor{MyLinkColor}{HTML}{2c82c9}
+\definecolor{MyRed}{HTML}{c0392b}
+
+\hypersetup{
+    colorlinks=false,
+    citecolor=MyLinkColor,
+    linkcolor=MyLinkColor,
+    filecolor=MyLinkColor,
+    urlcolor=MyLinkColor,
+}
+
+\setmainfont{source_han_serif_cn}
+[
+Path=./fonts/source_han_serif_cn/,
+UprightFont={*_regular},
+BoldFont={*_bold},
+Extension=.otf
+]
+
+\usepackage{xeCJK}
+\setCJKmainfont{source_han_serif_cn}
+[
+Path=./fonts/source_han_serif_cn/,
+UprightFont={*_regular},
+BoldFont={*_bold},
+Extension=.otf
+]
+
+\usepackage[normalem]{ulem}
+
+% Defines my own macro to insert the @ from a different font.
+% Reference: https://tex.stackexchange.com/questions/29238/how-can-i-change-the-symbol-in-e-mail-addresses
+\newcommand*\myat{{\fontencoding{T1}\fontfamily{ptm}\selectfont @}}
+
+% Set the indention of paragraphs to zero
+\setlength{\parindent}{0pt}
+
+% Set the paragraph spacing
+\setlength{\parskip}{1em}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Begin for customizing section titles
+
+\usepackage{titlesec}
+\titleformat{\section}[block]
+    {
+        \fontsize{16}{19.2}\selectfont\bfseries
+    }
+{\arabic{section}.}{0.5em}{}
+
+%\renewcommand\thesection{\arabic{section}.}
+
+% Enb for customizing section titles
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Shift title up. Reference: https://tex.stackexchange.com/a/29594/216629
+\usepackage{titling}
+\setlength{\droptitle}{-10em}   % This is your set screw
+
+\definecolor{MyUnderlineColor}{HTML}{000000}
+
+\pretitle{\begin{flushleft}}
+\posttitle{\end{flushleft}}
+
+\title{
+    \notosanssc\selectfont
+    \textbf{\fontsize{40}{48}\selectfont MEMO}\\
+    \vspace{2em}
+    {\fontsize{13}{15.6}\selectfont
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{@{}ll}
+        \textbf{SUBJECT:} & G-LEAP for Journal (IEEE ICC 2021 Follow-Up Paper)\\
+        \textbf{DATE:} & Feb. 3, 2021\\
+        \textbf{FROM:} & Jianfeng Hou, \href{mailto:houjf@shanghaitech.edu.cn}{houjf@shanghaitech.edu.cn}
+    \end{tabular}
+    }
+    \vspace{1em}\\
+    \textcolor{MyUnderlineColor}{\rule{\textwidth}{1.5pt}}
+}
+\author{
+}
+\date{
+}
+
+\begin{document}
+    
+    \maketitle
+    \thispagestyle{empty}
+%    \clearpage
+    
+%    \newpage
+%    
+%    \pagenumbering{arabic}
+    
+    \vspace{-2cm}
+    
+    \section{Confirmed To-Do List}
+    
+    讨论过确定要改的事项主要包括：
+    \begin{enumerate}[label=(\arabic*)]
+        \item 加上 regret bound 的讨论，四种情况，对应的 regret 曲线（参考高欣学姐的论文）
+        \item 会议版只有手机的能量约束，期刊加上服务器的能量约束
+    \end{enumerate}
+    
+    \section{Possible Modifications}
+    
+    我自己想到的可能还需要再加的内容：
+    \begin{enumerate}[label=(\arabic*), resume]
+        \item More related work discussion
+        \item Discussion / remark for the theorems
+        \item Large-scale simulations, and more discussion about the simulation results
+    \end{enumerate}
+    
+\end{document}
